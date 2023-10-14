@@ -1,0 +1,15 @@
+{% extends 'post/../../../post/templates/post/../../../post/templates/post/base.html' %}
+
+{% load crispy_forms_filters %}
+{% block title %}
+    Home-Today's posts
+{% endblock %}
+
+{% block content %}
+    <form method="post" action="#">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div>Don't have an account ? <a href="/signup">Sign up</a></div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
